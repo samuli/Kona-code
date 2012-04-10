@@ -1,0 +1,7 @@
+set palette model RGB defined ( 0 'red', 1 'blue', 2 'green', 3 'violet', 4 'cyan', 5 'orange' ) 
+#set key off
+# set terminal postscript enhanced color dashed lw 1 
+# set output "1.ps"
+plot "plot/clusters-1.out" using 1:2:3 with points pt 3 ps 1 palette
+replot "<head -6 plot/clusters-1.out" using 1:2:3 with points pt 9 ps 5 palette 
+replot "<head -6 plot/clusters-1.out" using 1:2:3 with points pt 3 ps 5 palette 
