@@ -1,0 +1,16 @@
+rgb(r,g,b) = int(r)*65536 + int(g)*256 + int(b)
+xrgb(r,g,b) = (g-b)/255. * cos(30.)
+yrgb(r,g,b) = r/255. - (g+b)/255. * sin(30.)
+GPFUN_rgb = "rgb(r,g,b) = int(r)*65536 + int(g)*256 + int(b)"
+GPFUN_xrgb = "xrgb(r,g,b) = (g-b)/255. * cos(30.)"
+GPFUN_yrgb = "yrgb(r,g,b) = r/255. - (g+b)/255. * sin(30.)"
+
+#set palette model RGB defined ( 0 'red', 1 'blue', 2 'green', 3 'violet', 4 'cyan', 5 'orange' ) 
+#set key off
+# set terminal postscript enhanced color dashed lw 1 
+# set output "1.ps"
+plot "plot/clusters-1.out" using 1:2:1 with points pt 7 ps var notitle
+
+#using 1:2:3 with points pt 3 ps 1 palette
+replot "<head -2 plot/clusters-1.out" using 1:2 with points pt 9 ps 5  
+#replot "<head -6 plot/clusters-1.out" using 1:2:3 with points pt 3 ps 5 palette 
